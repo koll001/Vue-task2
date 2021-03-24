@@ -7,33 +7,33 @@ import Page3 from '../views/Page3.vue';
 Vue.use(VueRouter);
 
 const routes = [
-	{
-		path: '/',
-		name: 'page1',
-		component: Page1,
-	},
-	{
-		path: '/page2',
-		name: 'page2',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: Page2,
-	},
-	{
-		path: '/page3',
-		name: 'page3',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: Page3,
-	},
+  {
+    path: '/',
+    name: 'page1',
+    component: Page1,
+  },
+  {
+    path: '/page2',
+    name: 'page2',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: Page2,
+  },
+  {
+    path: '/page3',
+    name: 'page3',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: Page3,
+  },
 ];
 
 const router = new VueRouter({
-	mode: 'history',
-	base: process.env.BASE_URL,
-	routes,
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes,
 });
 
 export default router;
