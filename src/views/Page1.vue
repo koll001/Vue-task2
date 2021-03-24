@@ -79,7 +79,9 @@ export default {
     genereateYears,
     generateMonths,
     generateDays,
-    days: generateDays(),
+    days: function() {
+      return generateDays(this.year, this.month);
+    },
   },
 };
 </script>

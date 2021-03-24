@@ -23,21 +23,16 @@ const generateMonths = () => {
   return months;
 };
 
-function generateDays() {
+function generateDays(year, month) {
   const days = [];
   let lastDay = 0;
-  if (this.month == 2) {
-    if (this.year % 4 == 0) {
+  if (month == 2) {
+    if (year % 4 == 0) {
       lastDay = 29;
     } else {
       lastDay = 28;
     }
-  } else if (
-    this.month == 4 ||
-    this.month == 6 ||
-    this.month == 9 ||
-    this.month == 11
-  ) {
+  } else if (month == 4 || month == 6 || month == 9 || month == 11) {
     lastDay = 30;
   } else {
     lastDay = 31;
