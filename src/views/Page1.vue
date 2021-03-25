@@ -10,11 +10,11 @@
         <div class="control">
           <p>-性別-</p>
           <label class="radio">
-            <input type="radio" name="answer" />
+            <input type="radio" name="answer" value="男性" v-model="sex" />
             男性
           </label>
           <label class="radio">
-            <input type="radio" name="answer" />
+            <input type="radio" name="answer" value="女性" v-model="sex" />
             女性
           </label>
         </div>
@@ -64,6 +64,7 @@ import {
 export default {
   data() {
     return {
+      sex: '',
       year: 2000,
       month: 1,
       day: 1,

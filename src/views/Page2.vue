@@ -11,11 +11,11 @@
           <p>-現在、生命保険に加入されていますか</p>
           <label class="radio">
             <input type="radio" value="male" name="ask1" v-model="ask1" />
-            男性
+            はい
           </label>
           <label class="radio">
             <input type="radio" value="female" name="ask1" v-model="ask1" />
-            女性
+            いいえ
           </label>
         </div>
         <transition name="fade">
