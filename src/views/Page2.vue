@@ -10,11 +10,23 @@
         <div class="control">
           <p>-現在、生命保険に加入されていますか</p>
           <label class="radio">
-            <input type="radio" value="male" name="ask1" v-model="ask1" />
+            <input
+              type="radio"
+              value="はい"
+              name="ask1"
+              v-model="ask1"
+              @change="updateAsk1"
+            />
             はい
           </label>
           <label class="radio">
-            <input type="radio" value="female" name="ask1" v-model="ask1" />
+            <input
+              type="radio"
+              value="いいえ"
+              name="ask1"
+              v-model="ask1"
+              @change="updateAsk1"
+            />
             いいえ
           </label>
         </div>
@@ -24,11 +36,23 @@
               -現在、入院中ですか。または、最近３ヵ月以内に医師の診療・検査の結果、入院・手術をすすめられたことはありますか？
             </p>
             <label class="radio">
-              <input type="radio" value="yes" name="ask2" v-model="ask2" />
+              <input
+                type="radio"
+                value="はい"
+                name="ask2"
+                v-model="ask2"
+                @change="updateAsk2"
+              />
               はい
             </label>
             <label class="radio">
-              <input type="radio" value="no" name="ask2" v-model="ask2" />
+              <input
+                type="radio"
+                value="いいえ"
+                name="ask2"
+                v-model="ask2"
+                @change="updateAsk2"
+              />
               いいえ
             </label>
           </div>
@@ -39,11 +63,23 @@
               -過去、５年以内に、病気やけがで、手術をうけたことまたは継続して7日以上の入院をしたことがありますか？
             </p>
             <label class="radio">
-              <input type="radio" value="yes" name="ask3" v-model="ask3" />
+              <input
+                type="radio"
+                value="はい"
+                name="ask3"
+                v-model="ask3"
+                @change="updateAsk3"
+              />
               はい
             </label>
             <label class="radio">
-              <input type="radio" value="no" name="ask3" v-model="ask3" />
+              <input
+                type="radio"
+                value="いいえ"
+                name="ask3"
+                v-model="ask3"
+                @change="updateAsk3"
+              />
               いいえ
             </label>
           </div>
@@ -73,6 +109,17 @@ export default {
       ask2: '',
       ask3: '',
     };
+  },
+  methods: {
+    updateAsk1: function() {
+      this.$store.dispatch('actionUpdateAsk1', this.ask1);
+    },
+    updateAsk2: function() {
+      this.$store.dispatch('actionUpdateAsk2', this.ask2);
+    },
+    updateAsk3: function() {
+      this.$store.dispatch('actionUpdateAsk3', this.ask3);
+    },
   },
 };
 </script>
