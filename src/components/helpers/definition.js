@@ -26,13 +26,13 @@ const generateMonths = () => {
 function generateDays(year, month) {
   const days = [];
   let lastDay = 0;
-  if (month == 2) {
-    if (year % 4 == 0) {
+  if (month === 2) {
+    if (year % 4 === 0) {
       lastDay = 29;
     } else {
       lastDay = 28;
     }
-  } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+  } else if (month === 4 || month === 6 || month === 9 || month === 11) {
     lastDay = 30;
   } else {
     lastDay = 31;

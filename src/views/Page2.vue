@@ -69,9 +69,9 @@
 export default {
   data() {
     return {
-      ask1: false,
-      ask2: false,
-      ask3: false,
+      ask1: '',
+      ask2: '',
+      ask3: '',
     };
   },
 };

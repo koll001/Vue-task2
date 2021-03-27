@@ -37,9 +37,7 @@
 export default {
   data() {
     return {
-      ask1: false,
-      ask2: false,
-      ask3: false,
+      inputContents: '',
     };
   },
 };
