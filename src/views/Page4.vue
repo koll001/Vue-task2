@@ -9,35 +9,33 @@
       <div class="asks">
         <div class="control">
           <p>-性別-</p>
-          <div class="remind">{{ $store.state.sex }}</div>
+          <div class="remind">{{ sex }}</div>
         </div>
         <div class="control">
           <p>-生年月日-</p>
           <div class="remind">
-            {{
-              `${$store.state.year}年${$store.state.month}月${$store.state.day}日`
-            }}
+            {{ `${year}年${month}月${day}日` }}
           </div>
         </div>
         <div class="control">
           <p>-現在、生命保険に加入されていますか？-</p>
-          <div class="remind">{{ $store.state.ask1 }}</div>
+          <div class="remind">{{ ask1 }}</div>
         </div>
         <div class="control">
           <p>
             -現在、入院中ですか。または、最近３ヵ月以内に医師の診療・検査の結果、入院・手術をすすめられたことはありますか？
           </p>
-          <div class="remind">{{ $store.state.ask2 }}</div>
+          <div class="remind">{{ ask2 }}</div>
         </div>
         <div class="control">
           <p>
             -過去、５年以内に、病気やけがで、手術をうけたことまたは継続して7日以上の入院をしたことがありますか？
           </p>
-          <div class="remind">{{ $store.state.ask3 }}</div>
+          <div class="remind">{{ ask3 }}</div>
         </div>
         <div class="control">
           <p>-ご相談内容-</p>
-          <div class="remind">{{ $store.state.inputContents }}</div>
+          <div class="remind">{{ inputContents }}</div>
         </div>
       </div>
     </div>
@@ -57,7 +55,34 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    sex: function() {
+      return this.$store.getters.getSex;
+    },
+    year: function() {
+      return this.$store.getters.getYear;
+    },
+    month: function() {
+      return this.$store.getters.getMonth;
+    },
+    day: function() {
+      return this.$store.getters.getDay;
+    },
+    ask1: function() {
+      return this.$store.getters.getAsk1;
+    },
+    ask2: function() {
+      return this.$store.getters.getAsk2;
+    },
+    ask3: function() {
+      return this.$store.getters.getAsk3;
+    },
+    inputContents: function() {
+      return this.$store.getters.getInputContents;
+    },
+  },
+};
 </script>
 
 <style>

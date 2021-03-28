@@ -15,6 +15,32 @@ const store = new Vuex.Store({
     ask3: '',
     inputContents: '',
   },
+  getters: {
+    getSex: function(state) {
+      return state.sex;
+    },
+    getYear: function(state) {
+      return state.year;
+    },
+    getMonth: function(state) {
+      return state.month;
+    },
+    getDay: function(state) {
+      return state.day;
+    },
+    getAsk1: function(state) {
+      return state.ask1;
+    },
+    getAsk2: function(state) {
+      return state.ask2;
+    },
+    getAsk3: function(state) {
+      return state.ask3;
+    },
+    getInputContents: function(state) {
+      return state.inputContents;
+    },
+  },
   mutations: {
     mutationsUpdateSex: function(state, value) {
       state.sex = value;
