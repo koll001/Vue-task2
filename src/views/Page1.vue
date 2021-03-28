@@ -10,17 +10,29 @@
         <div class="control">
           <p>-性別-</p>
           <label class="radio">
-            <input type="radio" name="answer" value="男性" v-model="sex" />
+            <input
+              type="radio"
+              name="answer"
+              value="男性"
+              v-model="sex"
+              @change="updateSex"
+            />
             男性
           </label>
           <label class="radio">
-            <input type="radio" name="answer" value="女性" v-model="sex" />
+            <input
+              type="radio"
+              name="answer"
+              value="女性"
+              v-model="sex"
+              @change="updateSex"
+            />
             女性
           </label>
         </div>
         <p>-生年月日-</p>
         <div class="select">
-          <select id="year" v-model="year">
+          <select id="year" v-model="year" @change="updateYear">
             <option
               v-for="nengo in nengoes"
               :key="nengo.year"
@@ -31,7 +43,7 @@
           <label>年</label>
         </div>
         <div class="select">
-          <select id="month" class="list" v-model="month">
+          <select id="month" class="list" v-model="month" @change="updateMonth">
             <option v-for="(month, index) in months" :key="index">{{
               month
             }}</option>
@@ -39,7 +51,7 @@
           <label>月</label>
         </div>
         <div class="select">
-          <select id="days" class="list" v-model="day">
+          <select id="days" class="list" v-model="day" @change="updateDay">
             <option v-for="day in days" :key="day">{{ day }}</option>
           </select>
           <label>日</label>
@@ -76,6 +88,22 @@ export default {
     this.nengoes = genereateYears();
     this.months = generateMonths();
   },
+
+  methods: {
+    updateSex: function() {
+      this.$store.dispatch('actionUpdateSex', this.sex);
+    },
+    updateYear: function() {
+      this.$store.dispatch('actionUpdateYear', this.year);
+    },
+    updateMonth: function() {
+      this.$store.dispatch('actionUpdateMonth', this.month);
+    },
+    updateDay: function() {
+      this.$store.dispatch('actionUpdateDay', this.day);
+    },
+  },
+
   computed: {
     genereateYears,
     generateMonths,

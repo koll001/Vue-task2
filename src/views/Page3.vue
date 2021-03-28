@@ -14,6 +14,7 @@
             rows="10"
             cols="10"
             v-model="inputContents"
+            @change="updateInputContents"
           ></textarea>
         </div>
       </div>
@@ -25,7 +26,7 @@
         >
       </div>
       <div class="buttons">
-        <router-link to="/" tag="button" class="button is-primary"
+        <router-link to="/page4" tag="button" class="button is-primary"
           >次へ進む</router-link
         >
       </div>
@@ -39,6 +40,11 @@ export default {
     return {
       inputContents: '',
     };
+  },
+  methods: {
+    updateInputContents: function() {
+      this.$store.dispatch('actionUpdateInputContents', this.inputContents);
+    },
   },
 };
 </script>
